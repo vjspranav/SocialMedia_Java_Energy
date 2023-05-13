@@ -25,6 +25,30 @@ public class PostService {
         posts.add(newPost);
     }
 
+    public void likePost(int postIndex, User user) {
+        // post index is 1-based, but array index is 0-based
+        int postArrayIndex = postIndex - 1;
+        if (postArrayIndex < 0 || postArrayIndex >= posts.size()) {
+            System.out.println("Invalid post number. Please try again.");
+            return;
+        }
+
+        Post post = posts.get(postArrayIndex);
+        post.addLike(user);
+    }
+
+    public void unlikePost(int postIndex, User user) {
+        // post index is 1-based, but array index is 0-based
+        int postArrayIndex = postIndex - 1;
+        if (postArrayIndex < 0 || postArrayIndex >= posts.size()) {
+            System.out.println("Invalid post number. Please try again.");
+            return;
+        }
+
+        Post post = posts.get(postArrayIndex);
+        post.removeLike(user);
+    }
+
     public boolean deletePost(int postId, User currentUser) {
         // post id is 1-based, but array index is 0-based
         int postIndex = postId - 1;

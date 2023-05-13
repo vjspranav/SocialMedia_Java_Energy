@@ -34,7 +34,17 @@ public class FileStorageUtils {
             String line;
             while ((line = postReader.readLine()) != null) {
                 String[] parts = line.split(",");
-                Post post = new Post(new User(parts[0], ""), parts[2], Long.parseLong(parts[1]));
+                // Read likes
+                ArrayList<User> likes = new ArrayList<>();
+                ArrayList<String> comments = new ArrayList<>();
+                // parts: author,timestamp,content,likes,like1,like2,like3
+                if (parts.length > 3) {
+                    for (int i = 4; i < parts.length; i++) {
+                        likes.add(new User(parts[i], ""));
+                    }
+
+                }
+                Post post = new Post(new User(parts[0], ""), parts[2], Long.parseLong(parts[1]), likes, comments);
                 posts.add(post);
             }
             postReader.close();
@@ -61,7 +71,12 @@ public class FileStorageUtils {
         try {
             BufferedWriter postWriter = new BufferedWriter(new FileWriter(POST_FILE));
             for (Post post : posts) {
+                // write with likes
                 postWriter.write(post.getAuthor().getUsername() + "," + post.getTimestamp() + "," + post.getContent());
+                postWriter.write(",likes");
+                for (User user : post.getLikes()) {
+                    postWriter.write("," + user.getUsername());
+                }
                 postWriter.newLine();
             }
             postWriter.close();

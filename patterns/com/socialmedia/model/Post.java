@@ -21,6 +21,14 @@ public class Post {
         this.timestamp = timestamp;
     }
 
+    public Post(User author, String content, long timestamp, ArrayList<User> likes, ArrayList<String> comments) {
+        this.author = author;
+        this.content = content;
+        this.timestamp = timestamp;
+        this.likes = likes;
+        this.comments = comments;
+    }
+
     public User getAuthor() {
         return author;
     }

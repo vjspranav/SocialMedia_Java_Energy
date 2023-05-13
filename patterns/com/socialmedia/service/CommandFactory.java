@@ -6,7 +6,11 @@ import com.socialmedia.controller.LoginCommand;
 import com.socialmedia.controller.LogoutCommand;
 import com.socialmedia.controller.SignUpCommand;
 import com.socialmedia.controller.ViewPostsCommand;
+
+import com.socialmedia.controller.posts.LikePostCommand;
+import com.socialmedia.controller.posts.UnlikePostCommand;
 import com.socialmedia.controller.posts.DeletePostCommand;
+
 import com.socialmedia.model.User;
 
 import java.util.Scanner;
@@ -80,10 +84,10 @@ public class CommandFactory {
 
     private Command handlePostCommands(String input, User currentUser) {
         switch (input) {
-            // case "1":
-            //     return new LikePostCommand(postService, currentUser, postIndex);
-            // case "2":
-            //     return new UnlikePostCommand(postService, currentUser, postIndex);
+            case "1":
+                return new LikePostCommand(authService, postService, postIndex);
+            case "2":
+                return new UnlikePostCommand(authService, postService, postIndex);
             // case "3":
             //     return new CommentPostCommand(scanner, postService, currentUser, postIndex);
             case "4":

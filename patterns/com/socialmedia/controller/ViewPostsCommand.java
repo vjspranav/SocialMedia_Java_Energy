@@ -31,7 +31,7 @@ public class ViewPostsCommand implements Command {
             // post_index. author: post_content
             for (int i = 0; i < postService.getAllPosts().size(); i++) {
                 Post post = postService.getAllPosts().get(i);
-                System.out.printf("%d. %s: %s\n", i + 1, post.getAuthor().getUsername(), post.getContent());
+                System.out.printf("%d. %s: %s [%d likes]\n", i + 1, post.getAuthor().getUsername(), post.getContent(), post.getLikes().size());
                 // TODO: Print the number of likes and comments
             }
         }
@@ -50,14 +50,11 @@ public class ViewPostsCommand implements Command {
 
         commandFactory = new CommandFactory(authService, postService, postId);
 
-        while (true){
-            ConsoleUtils.printPostMenu();
-            Command command = commandFactory.getCommand();
-            if (command == null) {
-                break;
-            }
-            command.execute();
+        ConsoleUtils.printPostMenu();
+        Command command = commandFactory.getCommand();
+        if (command == null) {
+            return;
         }
-
+        command.execute();
     }
 }
