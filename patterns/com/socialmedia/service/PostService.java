@@ -49,6 +49,18 @@ public class PostService {
         post.removeLike(user);
     }
 
+    public void commentPost(int postIndex, User user, String comment) {
+        // post index is 1-based, but array index is 0-based
+        int postArrayIndex = postIndex - 1;
+        if (postArrayIndex < 0 || postArrayIndex >= posts.size()) {
+            System.out.println("Invalid post number. Please try again.");
+            return;
+        }
+
+        Post post = posts.get(postArrayIndex);
+        post.addComment(user, comment);
+    }
+
     public boolean deletePost(int postId, User currentUser) {
         // post id is 1-based, but array index is 0-based
         int postIndex = postId - 1;

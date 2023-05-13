@@ -7,6 +7,7 @@ import com.socialmedia.controller.LogoutCommand;
 import com.socialmedia.controller.SignUpCommand;
 import com.socialmedia.controller.ViewPostsCommand;
 
+import com.socialmedia.controller.posts.CommentPostCommand;
 import com.socialmedia.controller.posts.LikePostCommand;
 import com.socialmedia.controller.posts.UnlikePostCommand;
 import com.socialmedia.controller.posts.DeletePostCommand;
@@ -88,8 +89,8 @@ public class CommandFactory {
                 return new LikePostCommand(authService, postService, postIndex);
             case "2":
                 return new UnlikePostCommand(authService, postService, postIndex);
-            // case "3":
-            //     return new CommentPostCommand(scanner, postService, currentUser, postIndex);
+            case "3":
+                return new CommentPostCommand(authService, postService, postIndex);
             case "4":
                 return new DeletePostCommand(authService, postService, postIndex);
             case "5":

@@ -38,11 +38,19 @@ public class FileStorageUtils {
                 ArrayList<User> likes = new ArrayList<>();
                 ArrayList<String> comments = new ArrayList<>();
                 // parts: author,timestamp,content,likes,like1,like2,like3
-                if (parts.length > 3) {
-                    for (int i = 4; i < parts.length; i++) {
-                        likes.add(new User(parts[i], ""));
+                if (parts.length > 4) {
+                    if (parts[3].equals("likes")) {
+                        int i = 4;
+                        while (!parts[i].equals("comments")) {
+                            likes.add(new User(parts[i], ""));
+                            i++;
+                        }
+                        i++;
+                        while (i < parts.length) {
+                            comments.add(parts[i]);
+                            i++;
+                        }
                     }
-
                 }
                 Post post = new Post(new User(parts[0], ""), parts[2], Long.parseLong(parts[1]), likes, comments);
                 posts.add(post);
@@ -76,6 +84,10 @@ public class FileStorageUtils {
                 postWriter.write(",likes");
                 for (User user : post.getLikes()) {
                     postWriter.write("," + user.getUsername());
+                }
+                postWriter.write(",comments");
+                for (String comment : post.getComments()) {
+                    postWriter.write("," + comment);
                 }
                 postWriter.newLine();
             }

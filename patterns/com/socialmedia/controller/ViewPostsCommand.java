@@ -32,7 +32,9 @@ public class ViewPostsCommand implements Command {
             for (int i = 0; i < postService.getAllPosts().size(); i++) {
                 Post post = postService.getAllPosts().get(i);
                 System.out.printf("%d. %s: %s [%d likes]\n", i + 1, post.getAuthor().getUsername(), post.getContent(), post.getLikes().size());
-                // TODO: Print the number of likes and comments
+                for (int j = 0; j < post.getComments().size(); j++) {
+                    System.out.printf("\t%d. %s\n", j + 1, post.getComments().get(j));
+                }
             }
         }
 
