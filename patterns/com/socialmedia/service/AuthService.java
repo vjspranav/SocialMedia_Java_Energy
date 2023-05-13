@@ -45,6 +45,10 @@ public class AuthService {
         return false;
     }
 
+    public void logout() {
+        currentUser = null;
+    }
+
     private boolean isUsernameTaken(String username) {
         return users.stream().anyMatch(user -> user.getUsername().equals(username));
     }
