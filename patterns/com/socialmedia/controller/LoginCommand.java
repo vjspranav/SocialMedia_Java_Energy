@@ -20,6 +20,10 @@ public class LoginCommand implements Command {
         System.out.println("Enter your password:");
         String password = scanner.nextLine();
 
-        authService.login(username, password);
+        if (authService.login(username, password)) {
+            System.out.println("Login successful!");
+        } else {
+            System.out.println("Login failed. Please try again.");
+        }
     }
 }

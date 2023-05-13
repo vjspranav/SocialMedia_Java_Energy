@@ -24,4 +24,19 @@ public class PostService {
         Post newPost = new Post(author, content);
         posts.add(newPost);
     }
+
+    public boolean deletePost(int postId, User currentUser) {
+        // post id is 1-based, but array index is 0-based
+        int postIndex = postId - 1;
+        if (postIndex < 0 || postIndex >= posts.size()) {
+            return false;
+        }
+
+        Post post = posts.get(postIndex);
+        if (post.getAuthor().equals(currentUser)) {
+            posts.remove(postIndex);
+            return true;
+        }
+        return false;
+    }
 }
