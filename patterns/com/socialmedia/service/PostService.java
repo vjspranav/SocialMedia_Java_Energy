@@ -29,6 +29,7 @@ public class PostService {
         // post id is 1-based, but array index is 0-based
         int postIndex = postId - 1;
         if (postIndex < 0 || postIndex >= posts.size()) {
+            System.out.println("Invalid post number. Please try again.");
             return false;
         }
 
@@ -36,7 +37,12 @@ public class PostService {
         if (post.getAuthor().equals(currentUser)) {
             posts.remove(postIndex);
             return true;
+        }else{
+            // print both the users to show that the post author is different from the current user
+            System.out.println(post.getAuthor().equals(currentUser));
         }
+
+        System.out.println("You can only delete your own posts.");
         return false;
     }
 }
