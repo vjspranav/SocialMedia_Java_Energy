@@ -64,11 +64,12 @@ public class SocialMediaApp {
             if (currentUser == null) {
                 System.out.println("1. Sign up");
                 System.out.println("2. Login");
-                System.out.println("3. Exit");
+                System.out.println("9. Exit");
             } else {
                 System.out.println("1. Add a post");
                 System.out.println("2. View all posts");
                 System.out.println("3. Logout");
+                System.out.println("9. Exit");
             }
 
             int choice = input.nextInt();
@@ -82,7 +83,7 @@ public class SocialMediaApp {
                     case 2:
                         login();
                         break;
-                    case 3:
+                    case 9:
                         // Save user and post data to file before exiting
                         saveUserData();
                         savePostData();
@@ -103,6 +104,11 @@ public class SocialMediaApp {
                         currentUser = null;
                         System.out.println("Logged out successfully.");
                         break;
+                    case 9:
+                        // Save user and post data to file before exiting
+                        saveUserData();
+                        savePostData();
+                        System.exit(0);
                     default:
                         System.out.println("Invalid choice.");
                         break;
@@ -230,47 +236,45 @@ public class SocialMediaApp {
             Post post = posts.get(postNumber - 1);
 
             // Post options menu
-            while (true) {
-                System.out.println("Options for post" + postNumber + ":");
-                System.out.println("1. Like");
-                System.out.println("2. Unlike");
-                System.out.println("3. Comment");
-                System.out.println("4. Delete");
-                System.out.println("5. Go back");
+            System.out.println("Options for post" + postNumber + ":");
+            System.out.println("1. Like");
+            System.out.println("2. Unlike");
+            System.out.println("3. Comment");
+            System.out.println("4. Delete");
+            System.out.println("5. Go back");
 
-                int choice = input.nextInt();
-                input.nextLine();
+            int choice = input.nextInt();
+            input.nextLine();
 
-                switch (choice) {
-                    case 1:
-                        post.addLike(currentUser);
-                        System.out.println("Liked post.");
-                        break;
-                    case 2:
-                        post.removeLike(currentUser);
-                        System.out.println("Unliked post.");
-                        break;
-                    case 3:
-                        System.out.println("Enter your comment:");
-                        String comment = input.nextLine();
-                        post.addComment(currentUser, comment);
-                        System.out.println("Comment added.");
-                        break;
-                    case 4:
-                        if (post.getAuthor().equals(currentUser)) {
-                            posts.remove(post);
-                            System.out.println("Post deleted.");
-                            return;
-                        } else {
-                            System.out.println("You can only delete your own posts.");
-                            break;
-                        }
-                    case 5:
+            switch (choice) {
+                case 1:
+                    post.addLike(currentUser);
+                    System.out.println("Liked post.");
+                    return;
+                case 2:
+                    post.removeLike(currentUser);
+                    System.out.println("Unliked post.");
+                    return;
+                case 3:
+                    System.out.println("Enter your comment:");
+                    String comment = input.nextLine();
+                    post.addComment(currentUser, comment);
+                    System.out.println("Comment added.");
+                    return;
+                case 4:
+                    if (post.getAuthor().equals(currentUser)) {
+                        posts.remove(post);
+                        System.out.println("Post deleted.");
                         return;
-                    default:
-                        System.out.println("Invalid choice.");
-                        break;
-                }
+                    } else {
+                        System.out.println("You can only delete your own posts.");
+                        return;
+                    }
+                case 5:
+                    return;
+                default:
+                    System.out.println("Invalid choice.");
+                    break;
             }
         }
     }
