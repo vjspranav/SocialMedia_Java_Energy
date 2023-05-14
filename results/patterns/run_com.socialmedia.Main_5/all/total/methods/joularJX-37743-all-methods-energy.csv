@@ -1,0 +1,10 @@
+java.io.FileInputStream.readBytes,17.8872
+com.socialmedia.service.CommandFactory.<init>,0.0249
+jdk.internal.org.objectweb.asm.AnnotationWriter.visitEnd,0.0249
+java.io.FileOutputStream.<init>,0.0218
+java.util.concurrent.ConcurrentHashMap.get,0.0249
+java.io.FileInputStream.available,0.0129
+java.lang.ref.Reference.waitForReferencePendingList,0.0039
+java.util.ArrayList.grow,0.0249
+java.text.NumberFormat.<init>,0.0130
+jdk.internal.reflect.Reflection.getClassAccessFlags,0.0234

@@ -1,0 +1,5 @@
+java.io.FileInputStream.readBytes,16.9359
+java.lang.ref.Reference.waitForReferencePendingList,0.0164
+jdk.internal.org.objectweb.asm.MethodWriter.visitVarInsn,0.0142
+java.lang.invoke.LambdaFormEditor$TransformKey.ival,0.0137
+java.util.regex.Pattern.group0,0.0142

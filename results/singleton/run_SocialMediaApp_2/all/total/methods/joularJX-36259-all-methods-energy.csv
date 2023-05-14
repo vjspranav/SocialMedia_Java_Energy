@@ -1,0 +1,6 @@
+java.io.FileInputStream.readBytes,12.7779
+jdk.internal.reflect.Reflection.getCallerClass,0.0120
+java.lang.StringLatin1.hashCode,0.0123
+java.lang.ref.Reference.waitForReferencePendingList,0.0116
+java.lang.ClassLoader.defineClass0,0.0156
+SocialMediaApp.<clinit>,0.0123

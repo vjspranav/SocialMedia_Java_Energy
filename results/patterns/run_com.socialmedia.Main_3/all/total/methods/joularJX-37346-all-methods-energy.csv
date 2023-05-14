@@ -1,0 +1,7 @@
+java.io.FileInputStream.readBytes,14.5410
+sun.nio.cs.StreamEncoder.writeBytes,0.0121
+java.lang.ref.Reference.waitForReferencePendingList,-0.0117
+jdk.internal.org.objectweb.asm.ByteVector.enlarge,0.0162
+java.lang.invoke.LambdaForm$NamedFunction.<init>,0.0162
+java.io.Writer.write,0.0162
+java.lang.System.arraycopy,0.0162

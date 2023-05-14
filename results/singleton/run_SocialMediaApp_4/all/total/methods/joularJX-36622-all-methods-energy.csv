@@ -1,0 +1,6 @@
+java.lang.invoke.InvokerBytecodeGenerator.getInternalName,0.0147
+java.io.FileInputStream.readBytes,13.8142
+java.lang.String.intern,0.0181
+java.lang.ref.Reference.waitForReferencePendingList,0.0119
+jdk.internal.org.objectweb.asm.MethodWriter.visitVarInsn,0.0147
+java.lang.ClassLoader.defineClass0,0.0270

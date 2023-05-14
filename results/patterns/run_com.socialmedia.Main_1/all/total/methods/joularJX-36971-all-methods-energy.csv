@@ -1,0 +1,6 @@
+java.io.FileInputStream.readBytes,17.1182
+java.nio.Buffer.<init>,0.0115
+java.lang.ref.Reference.waitForReferencePendingList,-0.0134
+java.lang.Integer.valueOf,0.0135
+java.lang.ClassLoader.defineClass0,0.0338
+java.lang.invoke.MethodHandleNatives.resolve,0.0139

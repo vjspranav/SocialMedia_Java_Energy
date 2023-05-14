@@ -1,0 +1,7 @@
+java.io.FileInputStream.readBytes,13.4070
+java.nio.Buffer.remaining,0.0103
+jdk.internal.org.objectweb.asm.Type.getReturnTypeOffset,0.0156
+java.lang.ref.Reference.waitForReferencePendingList,0.0128
+java.io.BufferedWriter.implWrite,0.0083
+SocialMediaApp.<clinit>,0.0103
+sun.invoke.util.Wrapper.findWrapperType,0.0146

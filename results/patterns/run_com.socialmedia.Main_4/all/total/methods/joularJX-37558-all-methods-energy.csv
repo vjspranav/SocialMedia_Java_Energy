@@ -1,0 +1,9 @@
+java.io.FileInputStream.readBytes,19.3225
+java.lang.invoke.DirectMethodHandle.make,0.0252
+java.lang.invoke.LambdaFormEditor$TransformKey.packedBytes,0.0252
+sun.nio.cs.UTF_8.updatePositions,0.0115
+java.lang.ref.Reference.waitForReferencePendingList,0.0035
+jdk.internal.org.objectweb.asm.FieldVisitor.<init>,0.0281
+java.lang.Number.<init>,0.0252
+java.io.FileOutputStream.writeBytes,0.0252
+java.util.regex.Matcher.group,0.0067

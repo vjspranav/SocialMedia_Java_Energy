@@ -1,0 +1,7 @@
+java.io.FileInputStream.readBytes,17.0479
+com.socialmedia.service.AuthService.getUsers,0.0138
+java.lang.ref.Reference.waitForReferencePendingList,-0.0057
+java.lang.invoke.AbstractValidatingLambdaMetafactory.validateMetafactoryArgs,0.0221
+java.util.ArrayList.grow,0.0221
+java.lang.ClassLoader.defineClass0,0.0221
+java.lang.invoke.MethodType.invokers,0.0221

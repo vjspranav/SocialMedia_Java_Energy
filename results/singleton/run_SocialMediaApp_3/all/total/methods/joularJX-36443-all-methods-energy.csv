@@ -1,0 +1,5 @@
+java.io.FileInputStream.readBytes,14.4061
+java.util.Scanner.<init>,0.0113
+sun.invoke.util.VerifyType.isNullConversion,0.0113
+java.lang.ref.Reference.waitForReferencePendingList,0.0081
+jdk.internal.org.objectweb.asm.MethodWriter.visitInsn,0.0128
